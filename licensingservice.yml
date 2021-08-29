@@ -1,2 +1,3 @@
-a:
-  a: a
+spring:
+  datasource:
+    name: a
