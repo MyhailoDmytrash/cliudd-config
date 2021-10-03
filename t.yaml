@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-eureka
+spec:
+  selector:
+    matchLabels:
+      run: cloud-eureka
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: cloud-eureka
+    spec:
+      containers:
+        - name: cloud-eureka
+          image: https://hub.docker.com/layers/170152521/myhailo/test/cloud-eureka/images/sha256-9f02007a3148cc1b4f47a637019b1251e6417f6ac58c1e4effc9a95acb80f8d0?context=repo
+          ports:
+            - containerPort: 8080
+              protocol: TCP
